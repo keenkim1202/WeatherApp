@@ -28,4 +28,9 @@ extension UIColor {
   public class var mainBlueColor: UIColor {
     return UIColor(named: "mainBlueColor")!
   }
+  
+  public class var backgroundColor: UIColor {
+    return UIColor(named: "backgroundColor")!
+  }
+  
 }

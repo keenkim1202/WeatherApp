@@ -11,7 +11,7 @@ import SnapKit
 class HomeView: UIView, ViewRepresentable {
   
   let tableView: UITableView = {
-    let tableView = UITableView()
+    let tableView = UITableView(frame: .zero, style: .insetGrouped)
     return tableView
   }()
   

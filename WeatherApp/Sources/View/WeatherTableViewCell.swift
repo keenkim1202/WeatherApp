@@ -58,15 +58,15 @@ class WeatherTableViewCell: UITableViewCell, ViewRepresentable {
     let safeArea = contentView.safeAreaLayoutGuide
     
     cityLabel.snp.makeConstraints {
-      $0.leading.equalTo(safeArea).offset(10)
-      $0.trailing.equalTo(safeArea).offset(-10)
+      $0.leading.equalTo(safeArea).offset(20)
+      $0.trailing.equalTo(safeArea).offset(-20)
       $0.top.equalTo(safeArea).offset(10)
     }
     
     todayView.snp.makeConstraints {
       $0.width.equalTo(todayView.snp.height).multipliedBy(2)
       $0.leading.equalTo(safeArea).offset(10)
-      $0.top.equalTo(cityLabel.snp.bottom).offset(10)
+      $0.top.equalTo(cityLabel.snp.bottom).offset(5)
       $0.bottom.equalTo(safeArea).offset(-10)
     }
 

@@ -14,6 +14,7 @@ class WeatherInfoView: UIView, ViewRepresentable {
     let label = UILabel()
     label.text = "Date"
     label.textColor = .mainBlueColor
+    label.backgroundColor = .backgroundColor
     label.font = UIFont.systemFont(ofSize: 12, weight: .bold)
     return label
   }()
@@ -21,7 +22,6 @@ class WeatherInfoView: UIView, ViewRepresentable {
   let imageView: UIImageView = {
     let imageView = UIImageView()
     imageView.image = UIImage(systemName: "square.slash")
-    imageView.backgroundColor = .white
     imageView.tintColor = .black
     imageView.contentMode = .scaleAspectFit
     return imageView
@@ -54,7 +54,6 @@ class WeatherInfoView: UIView, ViewRepresentable {
   // MARK: - Init
   override init(frame: CGRect) {
     super.init(frame: frame)
-    backgroundColor = .mainLightGreyColor
     createViews()
     setConstraints()
   }
@@ -82,7 +81,7 @@ class WeatherInfoView: UIView, ViewRepresentable {
     
     dateLabel.snp.makeConstraints {
       $0.leading.equalTo(safeAreaLayoutGuide).offset(10)
-      $0.trailing.equalTo(safeAreaLayoutGuide).offset(10)
+      $0.trailing.equalTo(safeAreaLayoutGuide).offset(-10)
       $0.top.equalTo(safeAreaLayoutGuide).offset(5)
     }
     
