@@ -15,16 +15,10 @@ class HomeViewController: UIViewController {
   let apiService = APIService()
   var locations: [Location] = [] {
     didSet {
-      self.fetch(locations: locations) { weatherList in
-        self.weatherList = weatherList
-      }
+      fetchData(locations: locations)
     }
   }
-  var weatherList: [[WeatherType]] = [] {
-    didSet {
-      self.homeView.tableView.reloadData()
-    }
-  }
+  var weatherList: [[WeatherType]] = []
   
   // MARK: View Life-Cycle
   override func loadView() {
@@ -36,7 +30,6 @@ class HomeViewController: UIViewController {
   
     configure()
     fetchLocation(query: "se")
-    // fetchData(locations: locations)
   }
   
   private func configure() {
@@ -59,35 +52,23 @@ class HomeViewController: UIViewController {
     }
   }
   
-  // func fetchData(locations: [Location]) {
-  //   locations.forEach {
-  //     print("1", self.locations.count, self.weatherList)
-  //       self.apiService.fetchWeatherInfo(woeid: $0.woeid) { code, data in
-  //         print("appended")
-  //         DispatchQueue.main.async {
-  //           self.weatherList.append([data[0], data[1]])
-  //         }
-  //       }
-  //   }
-  //
-  //   self.homeView.tableView.reloadData()
-  //   print("4", self.locations.count, self.weatherList)
-  // }
-  
-  func fetch(locations: [Location], completion: @escaping ([[WeatherType]]) -> Void) {
-    var weatherList: [[WeatherType]] = []
+  func fetchData(locations: [Location]) {
+    let dispatchGroup = DispatchGroup()
     
     locations.forEach {
-      print("1", self.locations.count, self.weatherList)
+      dispatchGroup.enter()
       self.apiService.fetchWeatherInfo(woeid: $0.woeid) { code, data in
-        print("appended")
+        self.weatherList.append([data[0], data[1]])
+        
         DispatchQueue.main.async {
-          weatherList.append([data[0], data[1]])
+          dispatchGroup.leave()
         }
       }
     }
     
-    completion(weatherList)
+    dispatchGroup.notify(queue: .main) {
+      self.homeView.tableView.reloadData()
+    }
   }
   
 }
@@ -109,12 +90,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
       let today = weather[0]
       let tommorrow = weather[1]
       
-      [today, tommorrow].forEach {
-        cell.todayView.stateNameLabel.text = $0.name
-        cell.todayView.imageView.kf.setImage(with: Endpoint.icon(abbr: $0.abbreviation).url)
-        cell.todayView.tempLabel.text = "\(round($0.temperature * 10) / 10)℃"
-        cell.todayView.humidityLabel.text = "\(Int($0.humidity))%"
-      }
+      cell.todayView.stateNameLabel.text = today.name
+      cell.todayView.imageView.kf.setImage(with: Endpoint.icon(abbr: today.abbreviation).url)
+      cell.todayView.tempLabel.text = "\(round(today.temperature * 10) / 10)℃"
+      cell.todayView.humidityLabel.text = "\(Int(today.humidity))%"
+      
+      cell.tomorrowView.stateNameLabel.text = tommorrow.name
+      cell.tomorrowView.imageView.kf.setImage(with: Endpoint.icon(abbr: tommorrow.abbreviation).url)
+      cell.tomorrowView.tempLabel.text = "\(round(tommorrow.temperature * 10) / 10)℃"
+      cell.tomorrowView.humidityLabel.text = "\(Int(tommorrow.humidity))%"
     }
     
     return cell
