@@ -15,6 +15,9 @@
 		1C91BCE42802AB8C00D13281 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91BCE32802AB8C00D13281 /* WeatherType.swift */; };
 		1C91BCE62802ADAC00D13281 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91BCE52802ADAC00D13281 /* Location.swift */; };
 		1C91BCEB2802C0D600D13281 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1C91BCEA2802C0D600D13281 /* SnapKit */; };
+		1C91BCED2802C28300D13281 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91BCEC2802C28300D13281 /* WeatherTableViewCell.swift */; };
+		1C91BCEF2802C67700D13281 /* WeatherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91BCEE2802C67700D13281 /* WeatherInfoView.swift */; };
+		1C91BCF22802D3AD00D13281 /* UIColor++Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91BCF12802D3AD00D13281 /* UIColor++Extension.swift */; };
 		1CA3B7AF2800B2910054EC4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3B7AE2800B2910054EC4E /* AppDelegate.swift */; };
 		1CA3B7B12800B2910054EC4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3B7B02800B2910054EC4E /* SceneDelegate.swift */; };
 		1CA3B7B32800B2910054EC4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3B7B22800B2910054EC4E /* HomeViewController.swift */; };
@@ -29,6 +32,9 @@
 		1C91BCE12802A81500D13281 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		1C91BCE32802AB8C00D13281 /* WeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherType.swift; sourceTree = "<group>"; };
 		1C91BCE52802ADAC00D13281 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		1C91BCEC2802C28300D13281 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		1C91BCEE2802C67700D13281 /* WeatherInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoView.swift; sourceTree = "<group>"; };
+		1C91BCF12802D3AD00D13281 /* UIColor++Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor++Extension.swift"; sourceTree = "<group>"; };
 		1CA3B7AB2800B2910054EC4E /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CA3B7AE2800B2910054EC4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CA3B7B02800B2910054EC4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				1C70B9BA2800B5600024A334 /* HomeView.swift */,
+				1C91BCEC2802C28300D13281 /* WeatherTableViewCell.swift */,
+				1C91BCEE2802C67700D13281 /* WeatherInfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,6 +101,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		1C91BCF02802D3A100D13281 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1C91BCF12802D3AD00D13281 /* UIColor++Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		1CA3B7A22800B2910054EC4E = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +138,7 @@
 		1CA3B7C22800B2B90054EC4E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				1C91BCF02802D3A100D13281 /* Extension */,
 				1CA3B7AE2800B2910054EC4E /* AppDelegate.swift */,
 				1CA3B7B02800B2910054EC4E /* SceneDelegate.swift */,
 				1C70B9BF2800B7BD0024A334 /* Protocol */,
@@ -228,11 +245,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C91BCED2802C28300D13281 /* WeatherTableViewCell.swift in Sources */,
 				1C91BCE22802A81500D13281 /* Endpoint.swift in Sources */,
 				1CA3B7B32800B2910054EC4E /* HomeViewController.swift in Sources */,
 				1C70B9BB2800B5600024A334 /* HomeView.swift in Sources */,
 				1CA3B7AF2800B2910054EC4E /* AppDelegate.swift in Sources */,
+				1C91BCEF2802C67700D13281 /* WeatherInfoView.swift in Sources */,
 				1C91BCE62802ADAC00D13281 /* Location.swift in Sources */,
+				1C91BCF22802D3AD00D13281 /* UIColor++Extension.swift in Sources */,
 				1CA3B7B12800B2910054EC4E /* SceneDelegate.swift in Sources */,
 				1C91BCDD2802A71900D13281 /* APIService.swift in Sources */,
 				1C91BCE42802AB8C00D13281 /* WeatherType.swift in Sources */,

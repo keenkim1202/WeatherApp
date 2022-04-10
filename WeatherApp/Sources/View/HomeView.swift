@@ -10,10 +10,16 @@ import SnapKit
 
 class HomeView: UIView, ViewRepresentable {
   
+  let tableView: UITableView = {
+    let tableView = UITableView()
+    return tableView
+  }()
+  
   // MARK: - Init
   override init(frame: CGRect) {
     super.init(frame: frame)
     backgroundColor = .white
+    registerCell()
     createViews()
     setConstraints()
   }
@@ -24,9 +30,19 @@ class HomeView: UIView, ViewRepresentable {
   }
   
   // MARK: - Configure
+  func registerCell() {
+    tableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.identifier)
+  }
+  
   func createViews() {
+    addSubview(tableView)
   }
   
   func setConstraints() {
+    tableView.translatesAutoresizingMaskIntoConstraints = false
+    
+    tableView.snp.makeConstraints {
+      $0.edges.equalToSuperview()
+    }
   }
 }

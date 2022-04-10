@@ -21,11 +21,18 @@ class HomeViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "Local Weather"
-    self.navigationController?.navigationBar.prefersLargeTitles = true
   
+    configure()
     fetchLocation(query: "se")
     fetchWeather(woeid: 628886) // test
+  }
+  
+  private func configure() {
+    title = "Local Weather"
+    self.navigationController?.navigationBar.prefersLargeTitles = true
+    
+    homeView.tableView.delegate = self
+    homeView.tableView.dataSource = self
   }
   
   // MARK: Data
@@ -41,5 +48,20 @@ class HomeViewController: UIViewController {
     }
   }
 
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 5 // test
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.identifier, for: indexPath) as? WeatherTableViewCell else { return UITableViewCell() }
+    return cell
+  }
+  
+  // func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+  //   return 130
+  // }
 }
 

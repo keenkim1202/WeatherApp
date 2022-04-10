@@ -33,16 +33,15 @@ class APIService {
   
   func fetchWeatherInfo(woeid: Int, result: @escaping (Int, Weather) -> Void) {
     let url = Endpoint.location(id: woeid).url
-    print(url)
+    
     AF.request(url, method: .get)
       .validate(statusCode: 200..<500)
       .responseDecodable(of: Weather.self) { response in
         
-        print(response)
         switch response.result {
         case .success(let value):
           let code = response.response?.statusCode ?? 500
-          print(value)
+          // print(value)
           result(code, value)
           
         case .failure(let error):
