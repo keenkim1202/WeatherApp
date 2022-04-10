@@ -14,17 +14,18 @@ class HomeViewController: UIViewController {
   // MARK: Properties
   let homeView = HomeView()
   let apiService = APIService()
+  
+  var weatherList: [[WeatherType]] = []
   var locations: [Location] = [] {
     didSet {
       fetchData(locations: locations)
     }
   }
-  var weatherList: [[WeatherType]] = []
   
   // MARK: View Life-Cycle
   override func loadView() {
     view = homeView
-    homeView.loadingView.startAnimation()
+    startLoading()
   }
   
   override func viewDidLoad() {
@@ -35,11 +36,19 @@ class HomeViewController: UIViewController {
   }
   
   private func configure() {
+    configureNavigationBar()
+
+    homeView.tableView.delegate = self
+    homeView.tableView.dataSource = self
+  }
+  
+  private func configureNavigationBar() {
     title = "Local Weather"
     self.navigationController?.navigationBar.prefersLargeTitles = true
     
-    homeView.tableView.delegate = self
-    homeView.tableView.dataSource = self
+    let barbuttonImage = UIImage(systemName: "arrow.triangle.2.circlepath")
+    navigationItem.rightBarButtonItem = UIBarButtonItem(image: barbuttonImage, style: .plain, target: self, action: #selector(onRefresh))
+    self.navigationItem.rightBarButtonItem?.isEnabled = false
   }
   
   // MARK: Data
@@ -69,11 +78,26 @@ class HomeViewController: UIViewController {
     }
     
     dispatchGroup.notify(queue: .main) {
-      self.homeView.loadingView.stopAnimation()
+      self.stopLoading()
       self.homeView.tableView.reloadData()
     }
   }
   
+  private func startLoading() {
+    homeView.loadingView.startAnimation()
+    self.navigationItem.rightBarButtonItem?.isEnabled = false
+  }
+  
+  private func stopLoading() {
+    homeView.loadingView.stopAnimation()
+    self.navigationItem.rightBarButtonItem?.isEnabled = true
+  }
+  
+  @objc func onRefresh() {
+    startLoading()
+    fetchLocation(query: "se")
+    fetchData(locations: locations)
+  }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
