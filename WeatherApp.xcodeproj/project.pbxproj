@@ -11,10 +11,10 @@
 		1C70B9BD2800B59A0024A334 /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C70B9BC2800B59A0024A334 /* ViewRepresentable.swift */; };
 		1C91BCDB2802A5F700D13281 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1C91BCDA2802A5F700D13281 /* Alamofire */; };
 		1C91BCDD2802A71900D13281 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91BCDC2802A71900D13281 /* APIService.swift */; };
-		1C91BCE02802A7B700D13281 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 1C91BCDF2802A7B700D13281 /* SwiftyJSON */; };
 		1C91BCE22802A81500D13281 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91BCE12802A81500D13281 /* Endpoint.swift */; };
 		1C91BCE42802AB8C00D13281 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91BCE32802AB8C00D13281 /* WeatherType.swift */; };
 		1C91BCE62802ADAC00D13281 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91BCE52802ADAC00D13281 /* Location.swift */; };
+		1C91BCEB2802C0D600D13281 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1C91BCEA2802C0D600D13281 /* SnapKit */; };
 		1CA3B7AF2800B2910054EC4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3B7AE2800B2910054EC4E /* AppDelegate.swift */; };
 		1CA3B7B12800B2910054EC4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3B7B02800B2910054EC4E /* SceneDelegate.swift */; };
 		1CA3B7B32800B2910054EC4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3B7B22800B2910054EC4E /* HomeViewController.swift */; };
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C91BCE02802A7B700D13281 /* SwiftyJSON in Frameworks */,
+				1C91BCEB2802C0D600D13281 /* SnapKit in Frameworks */,
 				1C91BCDB2802A5F700D13281 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,7 +168,7 @@
 			name = WeatherApp;
 			packageProductDependencies = (
 				1C91BCDA2802A5F700D13281 /* Alamofire */,
-				1C91BCDF2802A7B700D13281 /* SwiftyJSON */,
+				1C91BCEA2802C0D600D13281 /* SnapKit */,
 			);
 			productName = WeatherApp;
 			productReference = 1CA3B7AB2800B2910054EC4E /* WeatherApp.app */;
@@ -200,7 +200,7 @@
 			mainGroup = 1CA3B7A22800B2910054EC4E;
 			packageReferences = (
 				1C91BCD92802A5F700D13281 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				1C91BCDE2802A7B700D13281 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				1C91BCE92802C0D600D13281 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 1CA3B7AC2800B2910054EC4E /* Products */;
 			projectDirPath = "";
@@ -456,9 +456,9 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		1C91BCDE2802A7B700D13281 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+		1C91BCE92802C0D600D13281 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.0.0;
@@ -472,10 +472,10 @@
 			package = 1C91BCD92802A5F700D13281 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		1C91BCDF2802A7B700D13281 /* SwiftyJSON */ = {
+		1C91BCEA2802C0D600D13281 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1C91BCDE2802A7B700D13281 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
+			package = 1C91BCE92802C0D600D13281 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
