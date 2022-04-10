@@ -15,6 +15,8 @@ class HomeView: UIView, ViewRepresentable {
     return tableView
   }()
   
+  let loadingView = LoadingView()
+  
   // MARK: - Init
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -36,13 +38,22 @@ class HomeView: UIView, ViewRepresentable {
   
   func createViews() {
     addSubview(tableView)
+    addSubview(loadingView)
   }
   
   func setConstraints() {
     tableView.translatesAutoresizingMaskIntoConstraints = false
+    loadingView.translatesAutoresizingMaskIntoConstraints = false
     
     tableView.snp.makeConstraints {
       $0.edges.equalToSuperview()
+    }
+    
+    loadingView.snp.makeConstraints {
+      $0.centerX.centerY.equalToSuperview()
+      $0.leading.equalToSuperview().offset(160)
+      $0.trailing.equalToSuperview().offset(-160)
+      $0.width.equalTo(loadingView.snp.height)
     }
   }
 }

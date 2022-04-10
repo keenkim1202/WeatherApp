@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import MapKit
 
 class HomeViewController: UIViewController {
 
@@ -23,6 +24,7 @@ class HomeViewController: UIViewController {
   // MARK: View Life-Cycle
   override func loadView() {
     view = homeView
+    homeView.loadingView.startAnimation()
   }
   
   override func viewDidLoad() {
@@ -67,6 +69,7 @@ class HomeViewController: UIViewController {
     }
     
     dispatchGroup.notify(queue: .main) {
+      self.homeView.loadingView.stopAnimation()
       self.homeView.tableView.reloadData()
     }
   }
@@ -81,9 +84,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.identifier, for: indexPath) as? WeatherTableViewCell else { return UITableViewCell() }
     cell.selectionStyle = .none
+    
     let location = locations[indexPath.row]
     cell.cityLabel.text = location.title
-    
     
     if !weatherList.isEmpty {
       let weather = weatherList[indexPath.row]
@@ -99,6 +102,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
       cell.tomorrowView.imageView.kf.setImage(with: Endpoint.icon(abbr: tommorrow.abbreviation).url)
       cell.tomorrowView.tempLabel.text = "\(round(tommorrow.temperature * 10) / 10)℃"
       cell.tomorrowView.humidityLabel.text = "\(Int(tommorrow.humidity))%"
+    } else {
+      
     }
     
     return cell
