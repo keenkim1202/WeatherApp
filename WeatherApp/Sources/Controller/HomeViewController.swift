@@ -9,8 +9,15 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+  // MARK: Properties
+  let homeView = HomeView()
   let apiService = APIService()
   var locations: [Location] = []
+  
+  // MARK: View Life-Cycle
+  override func loadView() {
+    view = homeView
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -19,6 +26,7 @@ class HomeViewController: UIViewController {
     fetchWeather(woeid: 628886) // test
   }
   
+  // MARK: Data
   func fetchLocation(query: String) {
     apiService.fetchLocationInfo(query: query) { code, data in
       // print(data)

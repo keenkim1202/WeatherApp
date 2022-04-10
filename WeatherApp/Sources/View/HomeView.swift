@@ -12,14 +12,14 @@ class HomeView: UIView, ViewRepresentable {
   // MARK: - Init
   override init(frame: CGRect) {
     super.init(frame: frame)
+    backgroundColor = .white
     createViews()
     setConstraints()
   }
   
   required init?(coder: NSCoder) {
     super.init(coder: coder)
-    createViews()
-    setConstraints()
+    fatalError("init(coder:) has not been implemented")
   }
   
   // MARK: - Configure
