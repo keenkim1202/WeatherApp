@@ -21,6 +21,8 @@ class HomeViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = "Local Weather"
+    self.navigationController?.navigationBar.prefersLargeTitles = true
   
     fetchLocation(query: "se")
     fetchWeather(woeid: 628886) // test

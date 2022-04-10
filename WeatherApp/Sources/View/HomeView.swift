@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class HomeView: UIView, ViewRepresentable {
   
@@ -24,10 +25,8 @@ class HomeView: UIView, ViewRepresentable {
   
   // MARK: - Configure
   func createViews() {
-    
   }
   
   func setConstraints() {
-    
   }
 }
