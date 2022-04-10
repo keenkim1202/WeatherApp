@@ -38,13 +38,13 @@ class HomeViewController: UIViewController {
   // MARK: Data
   func fetchLocation(query: String) {
     apiService.fetchLocationInfo(query: query) { code, data in
-      // print(data)
+
     }
   }
   
   func fetchWeather(woeid: Int) {
     apiService.fetchWeatherInfo(woeid: woeid) { code, data in
-      // print(data)
+      
     }
   }
 
@@ -52,16 +52,13 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5 // test
+    return 5 
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.identifier, for: indexPath) as? WeatherTableViewCell else { return UITableViewCell() }
     return cell
   }
-  
-  // func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-  //   return 130
-  // }
+
 }
 

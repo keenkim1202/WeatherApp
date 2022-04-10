@@ -103,7 +103,6 @@ class WeatherInfoView: UIView, ViewRepresentable {
     
     humidityLabel.snp.makeConstraints {
       $0.leading.equalTo(tempLabel.snp.trailing).offset(10)
-      // $0.trailing.equalTo(safeAreaLayoutGuide).offset(10)
       $0.bottom.equalTo(imageView.snp.bottom).offset(-5)
     }
   }
