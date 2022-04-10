@@ -18,4 +18,11 @@ metaWeather API를 사용하어 만든 날씨앱 입니다.
 ## 구현 기능
 - [x] custom UI 구성
 - [x] Model 생성
+  - [x] Location : 위치 정보 모델
+  - [x] Weather : 날짜별 상세 날씨 정보 모델
 - [x] API 통신 처리
+  - [x] Location 정보 가져오기
+  - [x] Location 정보에 따른 오늘, 내일 날씨 정보 가져오기
+  - [x] API 통신 중에 로딩 에니메이션 추가
+- [x] 오른쪽 상단에 Refresh 버튼 추가
+  - [x] 로딩중일 때는 비활성화
