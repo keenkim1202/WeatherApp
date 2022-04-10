@@ -18,6 +18,7 @@
 		1C91BCED2802C28300D13281 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91BCEC2802C28300D13281 /* WeatherTableViewCell.swift */; };
 		1C91BCEF2802C67700D13281 /* WeatherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91BCEE2802C67700D13281 /* WeatherInfoView.swift */; };
 		1C91BCF22802D3AD00D13281 /* UIColor++Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91BCF12802D3AD00D13281 /* UIColor++Extension.swift */; };
+		1C91BCF52802E2A500D13281 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1C91BCF42802E2A500D13281 /* Kingfisher */; };
 		1CA3B7AF2800B2910054EC4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3B7AE2800B2910054EC4E /* AppDelegate.swift */; };
 		1CA3B7B12800B2910054EC4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3B7B02800B2910054EC4E /* SceneDelegate.swift */; };
 		1CA3B7B32800B2910054EC4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3B7B22800B2910054EC4E /* HomeViewController.swift */; };
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C91BCF52802E2A500D13281 /* Kingfisher in Frameworks */,
 				1C91BCEB2802C0D600D13281 /* SnapKit in Frameworks */,
 				1C91BCDB2802A5F700D13281 /* Alamofire in Frameworks */,
 			);
@@ -138,9 +140,9 @@
 		1CA3B7C22800B2B90054EC4E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				1C91BCF02802D3A100D13281 /* Extension */,
 				1CA3B7AE2800B2910054EC4E /* AppDelegate.swift */,
 				1CA3B7B02800B2910054EC4E /* SceneDelegate.swift */,
+				1C91BCF02802D3A100D13281 /* Extension */,
 				1C70B9BF2800B7BD0024A334 /* Protocol */,
 				1C91BCE72802BF0900D13281 /* Service */,
 				1C70B9C02800B8230024A334 /* Model */,
@@ -186,6 +188,7 @@
 			packageProductDependencies = (
 				1C91BCDA2802A5F700D13281 /* Alamofire */,
 				1C91BCEA2802C0D600D13281 /* SnapKit */,
+				1C91BCF42802E2A500D13281 /* Kingfisher */,
 			);
 			productName = WeatherApp;
 			productReference = 1CA3B7AB2800B2910054EC4E /* WeatherApp.app */;
@@ -218,6 +221,7 @@
 			packageReferences = (
 				1C91BCD92802A5F700D13281 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				1C91BCE92802C0D600D13281 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1C91BCF32802E2A400D13281 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 1CA3B7AC2800B2910054EC4E /* Products */;
 			projectDirPath = "";
@@ -484,6 +488,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		1C91BCF32802E2A400D13281 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -496,6 +508,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1C91BCE92802C0D600D13281 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		1C91BCF42802E2A500D13281 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C91BCF32802E2A400D13281 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

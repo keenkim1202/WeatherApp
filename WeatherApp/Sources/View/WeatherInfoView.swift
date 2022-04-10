@@ -21,7 +21,8 @@ class WeatherInfoView: UIView, ViewRepresentable {
   let imageView: UIImageView = {
     let imageView = UIImageView()
     imageView.image = UIImage(systemName: "square.slash")
-    imageView.tintColor = .white
+    imageView.backgroundColor = .white
+    imageView.tintColor = .black
     imageView.contentMode = .scaleAspectFit
     return imageView
   }()
@@ -30,7 +31,7 @@ class WeatherInfoView: UIView, ViewRepresentable {
     let label = UILabel()
     label.text = "state name"
     label.textColor = .mainBlackColor
-    label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+    label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
     return label
   }()
    
@@ -38,7 +39,7 @@ class WeatherInfoView: UIView, ViewRepresentable {
     let label = UILabel()
     label.text = "00℃"
     label.textColor = .mainRedColor
-    label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+    label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
     return label
   }()
   
@@ -46,7 +47,7 @@ class WeatherInfoView: UIView, ViewRepresentable {
     let label = UILabel()
     label.text = "100%"
     label.textColor = .mainDarkGreyColor
-    label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+    label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
     return label
   }()
   
@@ -77,6 +78,8 @@ class WeatherInfoView: UIView, ViewRepresentable {
     tempLabel.translatesAutoresizingMaskIntoConstraints = false
     humidityLabel.translatesAutoresizingMaskIntoConstraints = false
     
+    dateLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+    
     dateLabel.snp.makeConstraints {
       $0.leading.equalTo(safeAreaLayoutGuide).offset(10)
       $0.trailing.equalTo(safeAreaLayoutGuide).offset(10)
@@ -86,8 +89,8 @@ class WeatherInfoView: UIView, ViewRepresentable {
     imageView.snp.makeConstraints {
       $0.width.equalTo(imageView.snp.height).multipliedBy(1)
       $0.leading.equalTo(safeAreaLayoutGuide).offset(10)
-      $0.top.equalTo(dateLabel.snp.bottom).offset(5)
-      $0.bottom.equalTo(safeAreaLayoutGuide).offset(-15)
+      $0.top.equalTo(dateLabel.snp.bottom).offset(10)
+      $0.bottom.equalTo(safeAreaLayoutGuide).offset(-10)
     }
     
     stateNameLabel.snp.makeConstraints {

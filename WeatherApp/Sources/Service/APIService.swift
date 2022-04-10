@@ -31,7 +31,7 @@ class APIService {
       }
   }
   
-  func fetchWeatherInfo(woeid: Int, result: @escaping (Int, Weather) -> Void) {
+  func fetchWeatherInfo(woeid: Int, result: @escaping (Int, [WeatherType]) -> Void) {
     let url = Endpoint.location(id: woeid).url
     
     AF.request(url, method: .get)
@@ -41,8 +41,7 @@ class APIService {
         switch response.result {
         case .success(let value):
           let code = response.response?.statusCode ?? 500
-          // print(value)
-          result(code, value)
+          result(code, value.consolidatedWeather)
           
         case .failure(let error):
           print("ERROR: \(error.localizedDescription)")

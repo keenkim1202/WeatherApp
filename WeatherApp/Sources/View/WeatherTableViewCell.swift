@@ -20,8 +20,17 @@ class WeatherTableViewCell: UITableViewCell, ViewRepresentable {
     return label
   }()
   
-  let todayView = WeatherInfoView()
-  let tomorrowView = WeatherInfoView()
+  let todayView: WeatherInfoView = {
+    let view = WeatherInfoView()
+    view.dateLabel.text = "Today"
+    return view
+  }()
+  
+  let tomorrowView: WeatherInfoView = {
+    let view = WeatherInfoView()
+    view.dateLabel.text = "Tommorow"
+    return view
+  }()
   
   // MARK: - Init
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
