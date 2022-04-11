@@ -26,3 +26,6 @@ metaWeather API를 사용하어 만든 날씨앱 입니다.
   - [x] API 통신 중에 로딩 에니메이션 추가
 - [x] 오른쪽 상단에 Refresh 버튼 추가
   - [x] 로딩중일 때는 비활성화
+
+## 실행 영상
+<p align="center"><img width="30%" src="https://user-images.githubusercontent.com/59866819/162689439-d1160eac-f13c-43ea-b93f-54a95ccd624a.gif" /></p>
