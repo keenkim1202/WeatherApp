@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C49A80C2803507200F2986F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C49A80B2803507200F2986F /* LoadingView.swift */; };
+		1C5671242804135F00299CA8 /* UITableView++Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5671232804135F00299CA8 /* UITableView++Extension.swift */; };
 		1C70B9BB2800B5600024A334 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C70B9BA2800B5600024A334 /* HomeView.swift */; };
 		1C70B9BD2800B59A0024A334 /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C70B9BC2800B59A0024A334 /* ViewRepresentable.swift */; };
 		1C91BCDB2802A5F700D13281 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1C91BCDA2802A5F700D13281 /* Alamofire */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		1C49A80B2803507200F2986F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		1C5671232804135F00299CA8 /* UITableView++Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView++Extension.swift"; sourceTree = "<group>"; };
 		1C70B9BA2800B5600024A334 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1C70B9BC2800B59A0024A334 /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
 		1C91BCDC2802A71900D13281 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				1C91BCF12802D3AD00D13281 /* UIColor++Extension.swift */,
+				1C5671232804135F00299CA8 /* UITableView++Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				1C91BCED2802C28300D13281 /* WeatherTableViewCell.swift in Sources */,
 				1C91BCE22802A81500D13281 /* Endpoint.swift in Sources */,
 				1CA3B7B32800B2910054EC4E /* HomeViewController.swift in Sources */,
+				1C5671242804135F00299CA8 /* UITableView++Extension.swift in Sources */,
 				1C70B9BB2800B5600024A334 /* HomeView.swift in Sources */,
 				1CA3B7AF2800B2910054EC4E /* AppDelegate.swift in Sources */,
 				1C91BCEF2802C67700D13281 /* WeatherInfoView.swift in Sources */,

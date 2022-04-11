@@ -79,6 +79,7 @@ class HomeViewController: UIViewController {
     
     dispatchGroup.notify(queue: .main) {
       self.stopLoading()
+      self.homeView.tableView.scroll(to: .top, animated: true)
       self.homeView.tableView.reloadData()
     }
   }
