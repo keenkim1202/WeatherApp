@@ -17,6 +17,10 @@ metaWeather API를 사용하어 만든 날씨앱 입니다.
 
 ## 구현 기능
 - [x] custom UI 구성
+  - [x] HomeView
+  - [x] WeatherInfoCell
+  - [x] WeatherInfoView
+  - [x] LoadingView
 - [x] Model 생성
   - [x] Location : 위치 정보 모델
   - [x] Weather : 날짜별 상세 날씨 정보 모델
