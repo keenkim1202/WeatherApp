@@ -2,7 +2,7 @@
 metaWeather API를 사용하어 만든 날씨앱 입니다.
 
 - MVC 패턴으로 작성하였습니다.
-- 39도씨 메인 컬러를 차용하여 UI에 적용하였습니다.
+- LoadingView를 직접 제작하였습니다.
 
 ## API
 - [metaWeatherAPI](https://www.metaweather.com/api/)
